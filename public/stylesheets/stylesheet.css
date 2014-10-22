@@ -1,0 +1,10 @@
+ html { 
+     background-image: url('http://lorempixel.com/1300/1300');
+     background-repeat: repeat; 
+ }
+ body {
+     background-color: transparent; 
+     font-family: avenir;
+     color: white;
+     font-size: 20px;
+ }

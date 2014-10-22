@@ -1,30 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-  <meta charset="utf-8">
-  <title>Title</title>
-<!--   <meta name="description" content="">
-  <meta name="author" content=""> -->
-  <link rel="stylesheet" href="">
-</head>
-<body>
+<% include ../partials/header %>
   <h1>All my posts! BAM!</h1>
   <a href="/authors">Back to Authors! </a>
   <% posts.forEach(function(post){ %>
   <p><%= post.title %></p>
+  <br>
+  <p><%= post.post %></p>
   <form action="/posts/<%= post.id %>?_method=delete" method="post">
     <input type="submit" value="Delete">
   </form>
+  <form>
   <a href="/posts/<%= post.id %>/edit">Edit</a>
+  </form>
   <% }); %>
-</body>
-</html>
+<% include ../partials/footer %>

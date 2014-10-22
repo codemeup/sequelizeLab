@@ -1,32 +1,23 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<% include ../partials/header %>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<div class="row">
+  <div class="col-xs-9">.col-xs-9</div>
+  <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
+    <p> A little info about our book!
+      <br>
+      Title: <%= post.title%>
+      <br>
+      Author: <%= post.authorId%>
+      <br>
+      Post: <%= post.post%>
+    </p>
+  </div>
+  <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
+</div>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Title</title>
-</head>
-<body>
-
-  <p> A little info about our book!
-    <br>
-    Title: <%= post.title%>
-    <br>
-    Author: <%= post.authorId%>
-    <br>
-    Post: <%= post.post%>
-  </p>
+  
 
 
 <a href="/posts">Go home</a>
 
-</body>
-</html>
+<% include ../partials/footer %>

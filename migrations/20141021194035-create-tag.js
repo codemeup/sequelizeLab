@@ -1,14 +1,14 @@
 "use strict";
 module.exports = {
   up: function(migration, DataTypes, done) {
-    migration.createTable("Authors", {
+    migration.createTable("Tags", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      name: {
+      tagname: {
         type: DataTypes.STRING
       },
       createdAt: {
@@ -22,7 +22,6 @@ module.exports = {
     }).done(done);
   },
   down: function(db) {
-    
-    migration.dropTable("Authors").done(done);
+    migration.dropTable("Tags").done(done);
   }
 };

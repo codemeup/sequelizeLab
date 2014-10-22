@@ -7,6 +7,7 @@ var express = require('express'),
     db = require('./models/index');
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
@@ -144,8 +145,6 @@ app.put('/posts/:id', function(req, res) {
   });
 });
 
-
-
 //Delete Post
 app.delete('/posts/:id', function(req, res) {
   var id = req.params.id;
@@ -158,84 +157,6 @@ app.delete('/posts/:id', function(req, res) {
   });
 });
 
-// app.get('/posts', function(req,res){
-//   db.Post.findAll().done(function(err,posts){
-//     console.log(posts);
-//     res.render('post/index', {posts:posts});
-//   });
-// });
-
-// app.get('/posts/:authorId/new', function(req,res){
-//   db.Author.find(req.params.authorId).done(function(err, author){
-//     console.log(author)
-//   res.render('post/new', {author:author});  
-//   });
-  
-// });
-
-// app.post('/posts/:authorId',function(req,res){
-//   db.Post.create({
-//     title: req.body.post.title,
-//     AuthorId: req.params.authorId,
-//     post: req.body.post.post
-//   }).done(function(err,success){
-//     if(err){
-//       console.log(err);
-//       res.render('post/new');
-//     }
-//     else{
-//       res.redirect('/posts');
-//     }
-//   });
-// });
-
-// app.get('/posts/:id/edit', function(req, res) {
-//   //find our book
-//   var id = req.params.id;
-//   db.Posts.find(id).done(function(err,post){
-//     res.render('post/edit', {post: post});
-//   // }) these next two lines have been replaced by the new version using the package
-//   // library.findById(id,function(leBook){
-//   //     res.render('library/edit', {book: leBook});
-//   });
-// });
-
-
-// app.put('/posts/:id', function(req, res) {
-//   var id = req.params.id;
-//   db.Post.find(id).done(function(err,post){
-//     post.updateAttributes({
-//       title: req.body.post.title,
-//       post: req.body.post.post
-//      }).done(function(err){
-//       if(err){
-        
-//         var errMsg = "title must be at least 6 characters long";
-//         res.render('/edit', {errMsg: errMsg, post: post});
-
-//         } else {
-//         res.redirect('/posts');
-//         }
-//      });
-//   // library.update(id, req.body.book.title, req.body.book.author, function(){
-//   //   res.redirect('/books');
-//   });
-// });
-
-
-
-// //Delete
-// app.delete('/posts/:id', function(req, res) {
-//   var AuthorId = req.params.authorId;
-//     db.Post.find({ where: { authorId: AuthorId } }).done(function(err,post){
-//       post.destroy().done(function(err) {
-//        res.redirect('/post'); 
-//       });
-//     });
-
-//   // library.destroy(id, function(){
-//   //     res.redirect('/books');
-// });
 
 
 

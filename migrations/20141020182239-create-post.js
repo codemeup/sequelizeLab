@@ -28,7 +28,7 @@ module.exports = {
       }
     }).done(done);
   },
-  down: function(migration, DataTypes, done) {
+  down: function(db) {
     migration.dropTable("Posts").done(done);
   }
 };

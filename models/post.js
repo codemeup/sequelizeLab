@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(db) {
       Post.belongsTo(db.Author);  
+      Post.hasMany(db.PostTag);   
       }
     }
   });
