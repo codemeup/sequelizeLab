@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+<!--   <meta name="description" content="">
+  <meta name="author" content=""> -->
+  <link rel="stylesheet" href="">
+</head>
+<body>
+<% if(typeof errMsg !== 'undefined') {%>
+<h3 style = "color:red;"><%=errMsg %>
+</h3>
+<% } %>
+<h1><%= author.name %></h1>
+
+ <form action="/posts/<%= author.id %>" method="post">
+		<p>
+			<label for="title">Title::</label>
+			<input name="post[title]" placeholder="title" id="title">
+		</p>
+		<p>
+			<label for="post">Post::</label>
+			<input name="post[post]" placeholder="post" id="post">
+		</p>
+		<p>
+			<input type="submit" value="Save">	
+		</p>
+		
+	</form>
+</body>
+</html>
